@@ -1,11 +1,14 @@
 ﻿using System;
+
 using System.Linq;
+
 using System.Collections.Generic;
 
 class HangmanGame
 {
     static void Main()
     {
+     
         string[] hangmanFrames = {
             
             "   ╔═══╗\n   |   ║\n   O   ║\n  /|\\  ║\n  / \\  ║\n       ║\n══════╩═══",
@@ -17,17 +20,25 @@ class HangmanGame
             "   ╔═══╗\n   |   ║\n       ║\n       ║\n       ║\n       ║\n══════╩═══"
         };
 
+        
         string[] words = { "Pele", "Bekovv", "Fortnite", "Messi", "Levski", "SoftUni" };
+       
         string wordToGuess = words[new Random().Next(words.Length)];
+        
         HashSet<char> guessedLetters = new HashSet<char>();
+       
         int incorrectGuesses = 0;
 
+       
         Console.WriteLine("Welcome to Hangman!");
+       
         Console.WriteLine(DisplayWord(wordToGuess, guessedLetters));
 
         while (true)
         {
+         
             Console.Write("Guess a letter: ");
+          
             char guess = Console.ReadLine().ToLower()[0];
 
             if (Char.IsLetter(guess) && guessedLetters.Add(guess))
@@ -35,14 +46,17 @@ class HangmanGame
                 if (!wordToGuess.Contains(guess))
                 {
                     incorrectGuesses++;
+                   
                     Console.WriteLine(hangmanFrames[incorrectGuesses - 1]);
                 }
 
                 string displayedWord = DisplayWord(wordToGuess, guessedLetters);
+               
                 Console.WriteLine(displayedWord);
 
                 if (!displayedWord.Contains('_'))
                 {
+                    
                     Console.WriteLine("Congratulations! You guessed the word!");
                     Console.WriteLine("┌───────────────────────────┐\n" +
                                       "│                           │\n" +
@@ -68,17 +82,24 @@ class HangmanGame
                                       "│         Better luck next time!     │\n" +
                                       "│                                    │\n" +
                                       "└────────────────────────────────────┘");
+                   
                     break;
                 }
             }
+            
             else
             {
+           
                 Console.WriteLine("Invalid input. Please enter a valid letter.");
             }
         }
+        
+  
     }
 
+   
     static string DisplayWord(string word, HashSet<char> guessedLetters)
+   
     {
         return new string(word.Select(c => guessedLetters.Contains(c) ? c : '_').ToArray());
     }
