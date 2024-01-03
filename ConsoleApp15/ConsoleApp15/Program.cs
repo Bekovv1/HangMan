@@ -17,7 +17,7 @@ class HangmanGame
             "   ╔═══╗\n   |   ║\n       ║\n       ║\n       ║\n       ║\n══════╩═══"
         };
 
-        string[] words = { "hangman", "python", "programming", "code", "developer", "challenge" };
+        string[] words = { "Pele", "Bekovv", "Fortnite", "Messi", "Levski", "SoftUni" };
         string wordToGuess = words[new Random().Next(words.Length)];
         HashSet<char> guessedLetters = new HashSet<char>();
         int incorrectGuesses = 0;
