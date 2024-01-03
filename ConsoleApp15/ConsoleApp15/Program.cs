@@ -30,7 +30,7 @@ class HangmanGame
         int incorrectGuesses = 0;
 
        
-        Console.WriteLine("Welcome to Hangman!");
+        Console.WriteLine("Dobre Doshul v Besenica!");
        
         Console.WriteLine(DisplayWord(wordToGuess, guessedLetters));
 
