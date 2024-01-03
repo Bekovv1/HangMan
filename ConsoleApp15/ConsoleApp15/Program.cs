@@ -21,7 +21,7 @@ class HangmanGame
         };
 
         
-        string[] words = { "Pele", "Bekovv", "Fortnite", "Messi", "Levski", "SoftUni" };
+        string[] words = { "pele", "bekovv", "fortnite", "messi", "levski", "softuni" };
        
         string wordToGuess = words[new Random().Next(words.Length)];
         
