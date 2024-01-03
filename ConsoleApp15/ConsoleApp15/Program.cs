@@ -90,7 +90,7 @@ class HangmanGame
             else
             {
            
-                Console.WriteLine("Invalid input. Please enter a valid letter.");
+                Console.WriteLine("Greshna Bukva Brat mi. Probvai pak fam.");
             }
         }
         
